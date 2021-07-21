@@ -1,0 +1,2 @@
+rootProject.name = "UI_Challenge"
+include ':app'
