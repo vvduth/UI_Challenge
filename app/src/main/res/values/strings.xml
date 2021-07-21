@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">UI_Challenge</string>
+
+    <array name = "countries">
+        <item>Norway</item>
+        <item>Finland</item>
+        <item>USA</item>
+        <item>United Kingdom</item>
+        <item>Vietnam</item>
+        <item>Switzerland</item>
+        <item>Spain</item>
+    </array>
 </resources>
