@@ -69,11 +69,40 @@ public class MainActivity extends AppCompatActivity {
         txtWrongPassword.setVisibility(View.GONE);
         txtPassNotMatch.setVisibility(View.GONE);
 
-        Snackbar.make(parent, "User Registered", Snackbar.LENGTH_INDEFINITE)
+        String name = edtTxtName.getText().toString();
+        String email = edtTxtEmail.getText().toString();
+        String country = spinnerCountries.getSelectedItem().toString();
+        String gender = "";
+
+        switch (rgGender.getCheckedRadioButtonId()){
+            case R.id.rbMale:
+                gender = "Male";
+                break;
+            case R.id.rbFemale:
+                gender = "Female" ;
+                break;
+            case R.id.rbOther:
+                gender = "Other";
+                break;
+            default:
+                gender = "unknown";
+                break ;
+        }
+
+        String snackText = "Name: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Gender " + gender +"\n" +"Country: " + country ;
+
+        Log.d(TAG, "Show snackbar: Text " + snackText);
+
+        Snackbar.make(parent, snackText, Snackbar.LENGTH_INDEFINITE)
                 .setAction("Dismiss", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                            edtTxtName.setText("");
+                            edtTxtEmail.setText("");
+                            edtTextPassword.setText("");
+                            edtTextPasswordConfirm.setText("");
                     }
                 }).show();
     }
@@ -99,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(edtTextPasswordConfirm.getText().toString().equals("")){
+            txtPassNotMatch.setVisibility(View.VISIBLE);
+            txtPassNotMatch.setText("Password does not match, please enter again");
+            return false;
+        }
+        if(!edtTextPasswordConfirm.getText().toString().equals(edtTextPassword.getText().toString())){
             txtPassNotMatch.setVisibility(View.VISIBLE);
             txtPassNotMatch.setText("Password does not match, please enter again");
             return false;
