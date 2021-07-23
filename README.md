@@ -15,6 +15,6 @@ Quite simple. you enter your information like name, email, etc...
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
 ## Some pictures of the app
-<img src="/UI_Challenge/readme1.png" alt="My cool logo"/>
-<img src="/UI_Challenge/Readme2.png" alt="My cool logo 2"/>
-<img src="/UI_Challenge/readme3.png" alt="My cool logo 3"/>
+<img src="/UI_Challenge/readme1.png" />
+<img src="/UI_Challenge/Readme2.png" />
+<img src="/UI_Challenge/readme3.png" />
